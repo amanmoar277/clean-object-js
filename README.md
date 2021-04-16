@@ -6,10 +6,13 @@ A library which </br>
 --return the same if is of any other type</br>
 
 PARAMS:</br>
-object -> {obj, consideDeeperLevel}</br>
+object -> {obj, consideDeeperLevel, discardFalsyValues}</br>
 
 NOTE:</br>
 --consideDeeperLevel is by default true</br>
+--discardFalsyValues is by default false</br>
+--these values will not be removed [0, false, ''] if we don't pass discardFalsyValues != true
+
 
 
 
@@ -56,6 +59,19 @@ const obj = {
    } 
 }
 ```
+const result = cleanObj({obj, consideDeeperLevel: false, discardFalsyValues: true})
+```
+{ 
+    name: 'foo',
+    array: [ 1, 'aman' ],
+    nexted: { 
+        name: 'foo',
+        surname: '',
+        array: [ 1, '', 0, false, 'aman' ],
+        nexted: { name: 'foo', surname: '' } 
+    } 
+}
+```
 
 #### 2. const result = cleanObj({obj})             
 // OR         
@@ -74,14 +90,31 @@ const obj = {
    } 
 }
 ```
+const result = cleanObj({obj, consideDeeperLevel: true, discardFalsyValues: true})
+```
+{ 
+    name: 'foo',
+    array: [ 1, 'aman' ],
+    nexted: { 
+        name: 'foo', 
+        array: [ 1, 'aman' ], 
+        nexted: { name: 'foo' } 
+    } 
+}
+```
 
 
 For Array
 ```
 const arr = [null, 1, '', 0, false, undefined, 'aman']
 
-const result = cleanObj({obj: arr})
-const result = cleanObj({obj: arr, consideDeeperLevel: false})
+const result1 = cleanObj({obj: arr})
+const result2 = cleanObj({obj: arr, consideDeeperLevel: false})
 
 [ 1, '', 0, false, 'aman' ]
+
+
+const result3 = cleanObj({obj: obj1, discardFalsyValues: true})
+[ 1, 'aman' ]
+
 
