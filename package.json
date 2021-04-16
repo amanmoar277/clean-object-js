@@ -1,0 +1,38 @@
+{
+  "name": "clean-object-js",
+  "version": "1.0.0",
+  "description": "remove null and undefined key-value pairs from an object or array",
+  "main": "./dist/clean-object.js",
+  "scripts": {
+    "test": "mocha --require ts-node/register --require source-map-support/register --recursive src/**/*.spec.ts",
+    "tsc": "tsc --project ./tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amanmoar277/clean-object-js.git"
+  },
+  "author": "Aman Moar <amoar277@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amanmoar277/clean-object-js/issues"
+  },
+  "homepage": "https://github.com/amanmoar277/clean-object-js#readme",
+  "keywords": [
+    "javascript",
+    "JS",
+    "typescript",
+    "Object.clean",
+    "clean object",
+    "deep clean object",
+    "amanmoar277"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@types/mocha": "^8.2.2",
+    "@types/node": "^14.14.41",
+    "chai": "^4.3.4",
+    "mocha": "^8.3.2",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  }
+}
