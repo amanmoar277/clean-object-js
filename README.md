@@ -2,7 +2,7 @@
 
 A library which </br>
 --removes all key-value pairs which consist value as null or undefined, if object is passed as obj(i.e. argument)</br>
---removes all elements eluals to null or undefined, if array is provided</br>
+--removes all elements equals to null or undefined, if array is provided to it</br>
 --return the same if is of any other type</br>
 
 PARAMS:</br>
